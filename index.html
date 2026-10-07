@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrossel Horizontal com 5 Imagens</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #0f172a;
+    }
+
+    /* Moldura em formato paisagem fixo */
+    .slider-wrapper {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      height: 450px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Trilha dos slides (5 slides = 500% de largura) */
+    .slider-track {
+      display: flex;
+      width: 500%;
+      height: 100%;
+      animation: autoSlide 15s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    }
+
+    /* Pausa a animação ao passar o cursor */
+    .slider-wrapper:hover .slider-track {
+      animation-play-state: paused;
+    }
+
+    /* Cada imagem ocupa 20% do container de 500% */
+    .slide-img {
+      width: 20%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    /* Animação horizontal para 5 slides */
+    @keyframes autoSlide {
+      0%, 16% {
+        transform: translateX(0%);
+      }
+      20%, 36% {
+        transform: translateX(-20%);
+      }
+      40%, 56% {
+        transform: translateX(-40%);
+      }
+      60%, 76% {
+        transform: translateX(-60%);
+      }
+      80%, 96% {
+        transform: translateX(-80%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slider-wrapper">
+    <div class="slider-track">
+      <img class="slide-img" src="https://cptstatic.s3.amazonaws.com/imagens/enviadas/materias/materia27743/como-cuidar-de-gatinhos-neonatos-da-forma-correta-cpt11.jpg" alt="Imagem 1">
+      <img class="slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgonUCwWjSCdWsSZB5qFYYycBQkdEbP3kl6zkpRTCPD75gkrGy7IhDLHqE&s=10" alt="Imagem 2">
+      <img class="slide-img" src="https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/10962/production/_102683976_momo.jpg.webp" alt="Imagem 3">
+      <img class="slide-img" src="https://i.ytimg.com/vi/Ujk_dIFuHeI/maxresdefault.jpg" alt="Imagem 4">
+      <img class="slide-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3xiVM9kUCOuL8Byh4cyqnv1rfqr0vDWSObKgxKLKZ1COL-MwZkTCz5wg&s=10" alt="Imagem 5">
+    </div>
+  </div>
+
+</body>
+</html>
